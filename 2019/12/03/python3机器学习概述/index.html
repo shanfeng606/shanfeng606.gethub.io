@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,jupyter notebook,python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="语言：python3框架：Scikit-learn      内置数据集或通过其可以直接下载的数据集其他：numpy,matplotlib,…IDE:Jupyter Notebook,pycharm以上有ANACONDA集成 人工智能&amp;gt;机器学习&amp;gt;深度学习内容：KNN 、线性回归、多项式回归、逻辑回归、模型正则化、PCA、SVM、决策树、随机森林、集成学习、模型选择、模型调试排名前三的算">
+<meta name="keywords" content="机器学习,jupyter notebook,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3机器学习概述">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;03&#x2F;python3%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0&#x2F;index.html">
+<meta property="og:site_name" content="shanfeng606">
+<meta property="og:description" content="语言：python3框架：Scikit-learn      内置数据集或通过其可以直接下载的数据集其他：numpy,matplotlib,…IDE:Jupyter Notebook,pycharm以上有ANACONDA集成 人工智能&amp;gt;机器学习&amp;gt;深度学习内容：KNN 、线性回归、多项式回归、逻辑回归、模型正则化、PCA、SVM、决策树、随机森林、集成学习、模型选择、模型调试排名前三的算">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-03T15:16:56.642Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/03/python3机器学习概述/"/>
+
+
+
+
+
+  <title>python3机器学习概述 | shanfeng606</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shanfeng606</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">此路或有蹉跎,君莫忘必有灵犀相佐</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/python3%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SYF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shanfeng606">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3机器学习概述</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-03T23:12:56+08:00">
+                2019-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>语言：python3<br>框架：Scikit-learn      内置数据集或通过其可以直接下载的数据集<br>其他：numpy,matplotlib,…<br>IDE:Jupyter Notebook,pycharm<br>以上有ANACONDA集成</p>
+<p>人工智能&gt;机器学习&gt;深度学习<br>内容：KNN 、线性回归、多项式回归、逻辑回归、模型正则化、PCA、SVM、决策树、随机森林、集成学习、模型选择、模型调试<br>排名前三的算法：逻辑回归、决策树、随机森林、神经网络（深度学习基础）</p>
+<a id="more"></a>
+<p>深入理解算法基本原理<br>实际使用算法解决真实场景的问题<br>对不同算法进行对比试验<br>对同一算法的不同参数进行对比试验<br>对部分算法底层编写<br>如何评价算法的好坏？<br>如何解决过拟合和欠拟合？<br>如何调节算法的参数？<br>如何验证算法的正确性？</p>
+<p>分类任务本质就是在特征空间切分，高维空间同理</p>
+<p>机器学习的任务<br>按可解决问题分类：<br>分类任务：二分类、多分类<br>回归任务：结果是一个连续数字的值，而非一个类别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[输入大量学习资料] --&gt;B(机器学习算法)</span><br><span class="line">B(机器学习算法) --&gt;C(模型/函数)</span><br><span class="line">D(输入样例) --&gt;C(模型/函数)</span><br><span class="line">C(模型/函数) --&gt;E(输出结果)</span><br></pre></td></tr></table></figure>
+<h4 id="按算法分类："><a href="#按算法分类：" class="headerlink" title="按算法分类："></a>按算法分类：</h4><p><strong>监督学习（大部分）：</strong><br>给机器的训练数据拥有“标记”或“答案”</p>
+<p><strong>非监督学习：</strong><br>给机器的训练数据没有任何“标记”或者“答案”，对没有“标记”的数据进行分类-聚类分析<br>意义：<br>1、对数据进行降维处理：特征提取、特征压缩<br>2、方便可视化<br>3、异常检测</p>
+<p><strong>半监督学习：</strong><br>一部分数据有“标记”或“答案”，一部分没有<br>通常先使用无监督学习对数据做处理，之后使用监督学习手段做模型的训练和预测 </p>
+<p><strong>增强学习：</strong><br> 根据周围环境的情况，采取行动，根据采取行动的结果，学习行动方式<br> （无人驾驶、机器人）</p>
+<p> 又可分<br> 批量学习（离线）：<br> 优：简单<br> 缺：如何适应环境变化<br> 解决方法：定时重新批量学习<br> 新缺点：每次重新批量学习，运算量巨大，在某些环境变化非常快的情况下，甚至不可能</p>
+<p> 在线学习<br> 优：及时反映新的环境变化<br> 缺：新的数据带来不好的变化<br> 解决方案：需要加强对数据进行监控</p>
+<p>  又可分<br>  参数学习（一旦学到了参数，就不再需要原有的数据集）<br>  非参数学习：不对模型建模，不代表没参数</p>
+<p>jupyter notebook<br>魔法命令<br>%run 运行外部文件<br>%timeit  加句子<br>%%timeit  加语句段<br>%time 一次循环<br>%lsmagic 查看其他魔法命令</p>
+<p>numpy基础<br>import numpy as np</p>
+<p>限定类型<br>import array<br>arr=array.array(‘i’,[i for i in range(10)])</p>
+<h5 id="numpy-array"><a href="#numpy-array" class="headerlink" title="numpy.array"></a>numpy.array</h5><p>nparr=np.array([i for i in range(10)])<br>nparr.dtype查看类型</p>
+<p>创建0一维向量<br>np.zeros(10)<br>创建0数组<br>np.zeros((3,5))</p>
+<p>全1数组<br>np.ones(10)<br>np.ones((3,5))</p>
+<p>全是666数组<br>np.full(shape=(3,5),fill_value=66)</p>
+<h5 id="arange"><a href="#arange" class="headerlink" title="arange"></a>arange</h5><p>[i for i in range(0,20,2)]——–python<br>np.arange(0 , 20, 2)—–可以用小数步长</p>
+<h5 id="linspace等差数列"><a href="#linspace等差数列" class="headerlink" title="linspace等差数列"></a>linspace等差数列</h5><p>np.linspace(0 , 20 ,0 )——包含起始点)</p>
+<h4 id="random"><a href="#random" class="headerlink" title="random"></a>random</h4><p>np.random（10）—-生成10个在0-1之间的随机数<br>np.random.randint(0 ,10)<br>np.random.randint(0 ,10, size=10)—–生成随机数组，取值前闭后开<br>np.random.randint(0 ,10, size=(3 , 5))<br>np.random.seed(666)—–设置种子，随机数固定，用于调试<br>np.random.normal( )——-正态分布<br>np.random.normal(10,100，（3,5） )—–均值为10，方差为100</p>
+<p>numpy.array的基本操作</p>
+<h5 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h5><p>x.ndim——元素x的维度<br>x.shape——<br>x.size——-元素个数</p>
+<h5 id="numpy-array的数据访问"><a href="#numpy-array的数据访问" class="headerlink" title="numpy.array的数据访问"></a>numpy.array的数据访问</h5><p> x[0]  x[-1] x[2,2]—–访问第2行第二列<br>x[0:5]=x[:5]——切片访问，访问0-5，不包含5<br>x[5:]——–访问5到最后一个数，包含5<br>x[::2]———-步长2、<br>x[:2 ,:3 ]—取前2行，前3列<br>修改子矩阵中的元素会影响原矩阵<br>subx=x[:2,:3].copy   此时修改不会影响原矩阵</p>
+<h5 id="reshape"><a href="#reshape" class="headerlink" title="reshape"></a>reshape</h5><p>x.reshape(2,5)不改变x自身，改变矩阵形式，必须能整除</p>
+<h5 id="合并操作"><a href="#合并操作" class="headerlink" title="合并操作"></a>合并操作</h5><p>np.concatenate{[x , y])  2个2×3矩阵变成4个2×3<br>np.concatenate([x,y].axis=1)    沿着列的方向进行拼接<br>np.concatenate([a,Z.reshape(1,-1)])—维数相等才能拼接<br>np.vstack( [ A, z ] )将数组垂直方向叠加在一起，即使维度不同<br>np.hstack( [ A, z ] )将数组水平方向叠加在一起，即使维度不同</p>
+<h5 id="分割操作"><a href="#分割操作" class="headerlink" title="分割操作"></a>分割操作</h5><p> array([0,1,2,3,4,5,6,7,8,9])<br> x1,x2,x3=np.split(x,[3,7])<br> 二维数组基于行分割<br> axis=1 基于列分割<br> np.vsplit( )<br> np.hsplit( )</p>
+<h5 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h5><p> L=np.arange(n)<br> 2×L 矩阵中所有元素进行运算<br>标准的矩阵运算<br> A.dot(B)    A.T转置</p>
+<h5 id="向量与矩阵的运算"><a href="#向量与矩阵的运算" class="headerlink" title="向量与矩阵的运算"></a>向量与矩阵的运算</h5><p> 低维向高维每个元素进行运算<br> np.tile(v,(2,1))行堆叠2次，列堆叠1次</p>
+<h5 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h5><p> np.linalg.inv(A)<br> np.linalg.pinv(A)伪逆   原矩阵与逆矩阵相乘为单位矩阵</p>
+<h5 id="聚合操作"><a href="#聚合操作" class="headerlink" title="聚合操作"></a>聚合操作</h5><p> np.sum( ) np.min( ) np.max( ) np.sum(x,axis=0)–行相加<br>比原生的sum运算更快<br>np.prod(x)乘积<br>np.mean( ) 平均数<br>np.mwdian( ) 中位数<br>np.var( )方差<br>np.std( )标准差</p>
+<h5 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h5><p>np.argmin( )返回索引号<br>np.argmax( )</p>
+<h5 id="排序和使用索引"><a href="#排序和使用索引" class="headerlink" title="排序和使用索引"></a>排序和使用索引</h5><p>np.random.shuffle( )  乱序排序<br>np.sort(x) 顺序排序   并没有改变x   x.sort( )改变x<br>矩阵默认行内排序，axis=1    axis=0列内排序<br>np.partition(x,3)   结果中比3小的数字放前面</p>
+<h5 id="fancy-index"><a href="#fancy-index" class="headerlink" title="fancy index"></a>fancy index</h5><p>ind=[3, 5, 8]<br>x[ind]索引3,5,8<br>row=np.array([0,1,2])<br>col=np.array([1,2,3])<br>x[row,col]<br>col=[True,False,True,True]</p>
+<h5 id="numpy-array的比较"><a href="#numpy-array的比较" class="headerlink" title="numpy.array的比较"></a>numpy.array的比较</h5><p>x&lt;3<br>array([True,False,True,True])<br>np.any(x==0)有0返回True<br>np.all(x&gt;=0) 所有元素满足才返回True</p>
+<h4 id="matplotlib基础"><a href="#matplotlib基础" class="headerlink" title="matplotlib基础"></a>matplotlib基础</h4><p>import matplotlib as mpl<br>import matplotlib.pyplot as plt  通常调用子模块</p>
+<p>plt.plot(x,y,color=” “,linestyle=” “，label=”cos(x)”)<br>plt.show( )<br>plt.xlim(-5,15)x轴范围 ，y轴同理<br>plt.axis([-1,11,-2,2])同时对x，y轴进行调整<br>plt.xlabel(“x axis”)坐标轴名称<br>plt.legend( )加上注释<br>plt.title(“ “)</p>
+<p>Scatter Plot绘制散点图<br>plt.scatter(x,y,alpha=0.1)alpha调节透明度</p>
+<p>读取数据和简单的数据探索</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/jupyter-notebook/" rel="tag"><i class="fa fa-tag"></i> jupyter notebook</a>
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%AE%BA%E7%BB%84%E6%88%90%E7%AF%87/" rel="next" title="计算机概论组成篇">
+                <i class="fa fa-chevron-left"></i> 计算机概论组成篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/a.jpg"
+                alt="SYF" />
+            
+              <p class="site-author-name" itemprop="name">SYF</p>
+              <p class="site-description motion-element" itemprop="description">目标：全栈工程师！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#按算法分类："><span class="nav-number">1.</span> <span class="nav-text">按算法分类：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#numpy-array"><span class="nav-number">1.1.</span> <span class="nav-text">numpy.array</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arange"><span class="nav-number">1.2.</span> <span class="nav-text">arange</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linspace等差数列"><span class="nav-number">1.3.</span> <span class="nav-text">linspace等差数列</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random"><span class="nav-number">2.</span> <span class="nav-text">random</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本属性"><span class="nav-number">2.1.</span> <span class="nav-text">基本属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#numpy-array的数据访问"><span class="nav-number">2.2.</span> <span class="nav-text">numpy.array的数据访问</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#reshape"><span class="nav-number">2.3.</span> <span class="nav-text">reshape</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#合并操作"><span class="nav-number">2.4.</span> <span class="nav-text">合并操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分割操作"><span class="nav-number">2.5.</span> <span class="nav-text">分割操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#矩阵乘法"><span class="nav-number">2.6.</span> <span class="nav-text">矩阵乘法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#向量与矩阵的运算"><span class="nav-number">2.7.</span> <span class="nav-text">向量与矩阵的运算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#矩阵的逆"><span class="nav-number">2.8.</span> <span class="nav-text">矩阵的逆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚合操作"><span class="nav-number">2.9.</span> <span class="nav-text">聚合操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引"><span class="nav-number">2.10.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序和使用索引"><span class="nav-number">2.11.</span> <span class="nav-text">排序和使用索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fancy-index"><span class="nav-number">2.12.</span> <span class="nav-text">fancy index</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#numpy-array的比较"><span class="nav-number">2.13.</span> <span class="nav-text">numpy.array的比较</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#matplotlib基础"><span class="nav-number">3.</span> <span class="nav-text">matplotlib基础</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SYF</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":200,"vOffset":0},"mobile":{"show":false}});</script></body>
+</html>
