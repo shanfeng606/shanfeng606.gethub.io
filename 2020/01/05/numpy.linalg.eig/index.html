@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,numpy,线性代数," />
 
 
 
@@ -79,14 +79,15 @@
 
 
 
-<meta name="description" content="目标：全栈工程师！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;index.html">
+<meta name="description" content="numpy.linalg.eig总结 问题缘由：帮同学解决一个问题，原本以为很简单，却因为基础不扎实意外的卡主了，看了好多技术博客，都没讲清楚甚至起了误导作用，直到看了官方文档才恍然大悟">
+<meta name="keywords" content="python,numpy,线性代数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy.linalg.eig总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;05&#x2F;numpy.linalg.eig&#x2F;index.html">
 <meta property="og:site_name" content="shanfeng606">
-<meta property="og:description" content="目标：全栈工程师！">
+<meta property="og:description" content="numpy.linalg.eig总结 问题缘由：帮同学解决一个问题，原本以为很简单，却因为基础不扎实意外的卡主了，看了好多技术博客，都没讲清楚甚至起了误导作用，直到看了官方文档才恍然大悟">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-28T05:12:31.285Z">
+<meta property="og:updated_time" content="2020-01-05T03:35:24.769Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/01/05/numpy.linalg.eig/"/>
 
 
 
 
 
-  <title>categories | shanfeng606</title>
+  <title>numpy.linalg.eig总结 | shanfeng606</title>
   
 
 
@@ -230,40 +231,187 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/05/numpy.linalg.eig/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SYF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shanfeng606">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 8 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/Life/">Life</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E7%BB%83%E4%B9%A0/">代码练习</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E7%BB%83%E4%B9%A0/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="category-list-count">2</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">numpy.linalg.eig总结</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-05T11:02:00+08:00">
+                2020-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="numpy-linalg-eig总结"><a href="#numpy-linalg-eig总结" class="headerlink" title="numpy.linalg.eig总结"></a>numpy.linalg.eig总结</h3><blockquote>
+<p>问题缘由：帮同学解决一个问题，原本以为很简单，却因为基础不扎实意外的卡主了，看了好多技术博客，都没讲清楚甚至起了误导作用，直到看了官方文档才恍然大悟</p>
+</blockquote>
+<a id="more"></a>
+<p>numpy.linalg.eig<br>这是计算方阵的特征值和特征向量函数</p>
+<h5 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h5><p>一个：（…，M，M）数组<br>将为其计算特征值和右特征向量的矩阵     </p>
+<hr>
+<h5 id="返回值："><a href="#返回值：" class="headerlink" title="返回值："></a>返回值：</h5><p>w ： （…，M）数组———<strong>特征值</strong><br>特征值，每个特征值根据其多重性重复。特征值不一定是有序的。除非虚部为零，否则所得数组将为复杂类型，在这种情况下它将被强制转换为实型。当a为实数时，所得特征值将为实数（0虚部）或出现在共轭对中<br>v：（…，M，M）数组——–<strong>特征向量</strong><br>归一化的（单位“长度”）特征向量，使得<u><strong>列v[:,i]是对应于特征值的特征向量w[i]。</strong></u></p>
+<hr>
+<blockquote>
+<p><strong>代码示例：</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">A = np.array([[0.465,0.32,0.233,0.523],[0.32,0.82,0.254,-0.07],[0.233,0.254,0.596,-0.382],[0.523,-0.07,-0.382,0.435]])</span><br><span class="line">print(&apos;打印A：\n&#123;&#125;&apos;.format(A))</span><br><span class="line">a, b = np.linalg.eig(A)</span><br><span class="line">print(&apos;打印特征值a：\n&#123;&#125;&apos;.format(a))</span><br><span class="line">print(&apos;打印特征向量b：\n&#123;&#125;&apos;.format(b))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>result</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">打印A：</span><br><span class="line">[[ 0.465  0.32   0.233  0.523]</span><br><span class="line"> [ 0.32   0.82   0.254 -0.07 ]</span><br><span class="line"> [ 0.233  0.254  0.596 -0.382]</span><br><span class="line"> [ 0.523 -0.07  -0.382  0.435]]</span><br><span class="line">打印特征值a：</span><br><span class="line">[-0.30599494  0.4110969   1.19902613  1.01187191]</span><br><span class="line">打印特征向量b：</span><br><span class="line">[[-0.62164476  0.37101483 -0.49092393  0.48466431]</span><br><span class="line"> [ 0.12648963 -0.67049098 -0.72839633 -0.06229771]</span><br><span class="line"> [ 0.40405689  0.63636272 -0.47694938 -0.45199537]</span><br><span class="line"> [ 0.65901153  0.08850048 -0.03085079  0.74627052]]</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/numpy/" rel="tag"><i class="fa fa-tag"></i> numpy</a>
+          
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"><i class="fa fa-tag"></i> 线性代数</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/01/JS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" rel="next" title="JS实现轮播图">
+                <i class="fa fa-chevron-left"></i> JS实现轮播图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -296,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -361,6 +518,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy-linalg-eig总结"><span class="nav-number">1.</span> <span class="nav-text">numpy.linalg.eig总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数："><span class="nav-number">1.0.1.</span> <span class="nav-text">参数：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回值："><span class="nav-number">1.0.2.</span> <span class="nav-text">返回值：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
