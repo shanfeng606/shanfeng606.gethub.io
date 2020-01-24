@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="shanfeng606">
 <meta property="og:description" content="numpy.linalg.eig总结 问题缘由：帮同学解决一个问题，原本以为很简单，却因为基础不扎实意外的卡主了，看了好多技术博客，都没讲清楚甚至起了误导作用，直到看了官方文档才恍然大悟">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-05T03:41:03.049Z">
+<meta property="og:updated_time" content="2020-01-22T14:02:15.250Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -344,12 +344,12 @@
 <blockquote>
 <p><strong>代码示例：</strong></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">A = np.array([[0.465,0.32,0.233,0.523],[0.32,0.82,0.254,-0.07],[0.233,0.254,0.596,-0.382],[0.523,-0.07,-0.382,0.435]])</span><br><span class="line">print(&apos;打印A：\n&#123;&#125;&apos;.format(A))</span><br><span class="line">a, b = np.linalg.eig(A)</span><br><span class="line">print(&apos;打印特征值a：\n&#123;&#125;&apos;.format(a))</span><br><span class="line">print(&apos;打印特征向量b：\n&#123;&#125;&apos;.format(b))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A = np.array([[<span class="number">0.465</span>,<span class="number">0.32</span>,<span class="number">0.233</span>,<span class="number">0.523</span>],[<span class="number">0.32</span>,<span class="number">0.82</span>,<span class="number">0.254</span>,<span class="number">-0.07</span>],[<span class="number">0.233</span>,<span class="number">0.254</span>,<span class="number">0.596</span>,<span class="number">-0.382</span>],[<span class="number">0.523</span>,<span class="number">-0.07</span>,<span class="number">-0.382</span>,<span class="number">0.435</span>]])</span><br><span class="line">print(<span class="string">'打印A：\n&#123;&#125;'</span>.format(A))</span><br><span class="line">a, b = np.linalg.eig(A)</span><br><span class="line">print(<span class="string">'打印特征值a：\n&#123;&#125;'</span>.format(a))</span><br><span class="line">print(<span class="string">'打印特征向量b：\n&#123;&#125;'</span>.format(b))</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><strong>result</strong></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">打印A：</span><br><span class="line">[[ 0.465  0.32   0.233  0.523]</span><br><span class="line"> [ 0.32   0.82   0.254 -0.07 ]</span><br><span class="line"> [ 0.233  0.254  0.596 -0.382]</span><br><span class="line"> [ 0.523 -0.07  -0.382  0.435]]</span><br><span class="line">打印特征值a：</span><br><span class="line">[-0.30599494  0.4110969   1.19902613  1.01187191]</span><br><span class="line">打印特征向量b：</span><br><span class="line">[[-0.62164476  0.37101483 -0.49092393  0.48466431]</span><br><span class="line"> [ 0.12648963 -0.67049098 -0.72839633 -0.06229771]</span><br><span class="line"> [ 0.40405689  0.63636272 -0.47694938 -0.45199537]</span><br><span class="line"> [ 0.65901153  0.08850048 -0.03085079  0.74627052]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">打印A：</span><br><span class="line">[[ <span class="number">0.465</span>  <span class="number">0.32</span>   <span class="number">0.233</span>  <span class="number">0.523</span>]</span><br><span class="line"> [ <span class="number">0.32</span>   <span class="number">0.82</span>   <span class="number">0.254</span> <span class="number">-0.07</span> ]</span><br><span class="line"> [ <span class="number">0.233</span>  <span class="number">0.254</span>  <span class="number">0.596</span> <span class="number">-0.382</span>]</span><br><span class="line"> [ <span class="number">0.523</span> <span class="number">-0.07</span>  <span class="number">-0.382</span>  <span class="number">0.435</span>]]</span><br><span class="line">打印特征值a：</span><br><span class="line">[<span class="number">-0.30599494</span>  <span class="number">0.4110969</span>   <span class="number">1.19902613</span>  <span class="number">1.01187191</span>]</span><br><span class="line">打印特征向量b：</span><br><span class="line">[[<span class="number">-0.62164476</span>  <span class="number">0.37101483</span> <span class="number">-0.49092393</span>  <span class="number">0.48466431</span>]</span><br><span class="line"> [ <span class="number">0.12648963</span> <span class="number">-0.67049098</span> <span class="number">-0.72839633</span> <span class="number">-0.06229771</span>]</span><br><span class="line"> [ <span class="number">0.40405689</span>  <span class="number">0.63636272</span> <span class="number">-0.47694938</span> <span class="number">-0.45199537</span>]</span><br><span class="line"> [ <span class="number">0.65901153</span>  <span class="number">0.08850048</span> <span class="number">-0.03085079</span>  <span class="number">0.74627052</span>]]</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -477,7 +477,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -488,7 +488,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
