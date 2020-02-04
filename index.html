@@ -242,6 +242,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/21%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SYF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shanfeng606">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/04/21%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" itemprop="url">JavaScript ES语法学习笔记（三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-04T18:11:29+08:00">
+                2020-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES/" itemprop="url" rel="index">
+                    <span itemprop="name">ES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="class类"><a href="#class类" class="headerlink" title="class类"></a><strong>class类</strong></h4><blockquote>
+<p>ES5中没有类，一般通过函数去模拟</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Animal = <span class="function"><span class="keyword">function</span> (<span class="params">type</span>) </span>&#123; <span class="comment">//定义了一个叫Animal的类</span></span><br><span class="line">  <span class="keyword">this</span>.type = type                <span class="comment">//声明属性type</span></span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.eat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;      <span class="comment">//声明方法eat</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'i am eat food'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> dog = <span class="keyword">new</span> Animal(<span class="string">'dog'</span>)     <span class="comment">//生成实例</span></span><br><span class="line"><span class="keyword">let</span> monkey = <span class="keyword">new</span> Animal(<span class="string">'monkey'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(dog)</span><br><span class="line"><span class="built_in">console</span>.log(monkey)</span><br><span class="line"><span class="comment">//另一种写法</span></span><br><span class="line">monkey.constructor.prototype.eat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'error'</span>)</span><br><span class="line">&#125;</span><br><span class="line">dog.eat()</span><br><span class="line">monkey.eat()</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/04/21%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/20%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -483,7 +632,7 @@
 
       
         
-          <h3 id="二零一九年终总结"><a href="#二零一九年终总结" class="headerlink" title="二零一九年终总结"></a>二零一九年终总结</h3><p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579890503272&di=ff30277e7ec26c874a981d32d4285c7c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201902%2F20%2F20190220220119_FVBU4.jpeg" alt="pic">图片出处：《强风吹拂》—今年看的最惊喜的一部番</p>
+          <h3 id="二零一九年终总结"><a href="#二零一九年终总结" class="headerlink" title="二零一九年终总结"></a>二零一九年终总结</h3><p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579890503272&di=ff30277e7ec26c874a981d32d4285c7c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201902%2F20%2F20190220220119_FVBU4.jpeg" alt="pic">图片出处：《强风吹拂》</p>
 <p>二零一九对我而言，是个焦虑的一年<br>从研一步入研二，从教室转移到办公室<br>没有必修课的约束，每个人都是自转的小行星<br>小小的办公室，足以有百态人生，每个人都有自己的活法</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1590,161 +1739,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%AE%BA%E7%BB%84%E6%88%90%E7%AF%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SYF">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shanfeng606">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%AE%BA%E7%BB%84%E6%88%90%E7%AF%87/" itemprop="url">计算机概论组成篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-27T23:27:53+08:00">
-                2019-11-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="计算机的总线"><a href="#计算机的总线" class="headerlink" title="计算机的总线"></a>计算机的总线</h2><p><strong>总线的概述：</strong><br>解决不同设备之间的通讯问题<br>USB = Universal Serial Bus   通用串行总线<br>PCI     ISA总线   Thunderbolt总线<br>总线的作用：提供了对外连接的接口；不同设备可以通过USB接口进行连接；连接标准，促使外围设备接口的统一<br><strong>分类：</strong><br>-片内总线：高集成度芯片内部的信息传输线<br>-系统总线：CPU、主内存、IO设备、各组件之间的信息传输线</p>
-<blockquote>
-<p>a、数据总线：双向传输各个部件的数据信息，数据总线的位数（总线宽度）一般与CPU位数相同（32位、64位）</p>
-</blockquote>
-<blockquote>
-<p>b、地址总线：指定源数据或目的数据在内存中的地址，地址总线位数=n，寻址范围：0~𝟐𝒏</p>
-</blockquote>
-<blockquote>
-<p>c、控制总线：控制总线是用来发出各种控制信号的传输线，监视不同组件之间的状态（就绪/未就绪）</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%AE%BA%E7%BB%84%E6%88%90%E7%AF%87/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1799,7 +1793,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
