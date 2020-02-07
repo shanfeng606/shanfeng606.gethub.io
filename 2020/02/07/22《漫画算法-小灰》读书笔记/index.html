@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,numpy,线性代数," />
+  <meta name="keywords" content="读书笔记,算法," />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="numpy.linalg.eig总结 问题缘由：帮同学解决一个问题，原本以为很简单，却因为基础不扎实意外的卡主了，看了好多技术博客，都没讲清楚甚至起了误导作用，直到看了官方文档才恍然大悟">
-<meta name="keywords" content="python,numpy,线性代数">
+<meta name="description" content="第一章 算法概述 什么是算法  在计算机领域内，算法是一系列程序指令，用于处理特定的运算和逻辑问题。衡量算法优劣的主要标准是时间复杂度和空间复杂度  什么是数据结构  数据结构是数据的组织、管理和储存格式，其使用目的是为了高效地访问和修改数据数据结构包含数组、链表这样的线性数据结构，也包含树、图这样的复杂数据结构。  什么是时间复杂度  时间复杂度是对一个算法运行时间长短的度量，用大O表示，记做T">
+<meta name="keywords" content="读书笔记,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="numpy.linalg.eig总结">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;05&#x2F;numpy.linalg.eig&#x2F;index.html">
+<meta property="og:title" content="《漫画算法-小灰》读书笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;22%E3%80%8A%E6%BC%AB%E7%94%BB%E7%AE%97%E6%B3%95-%E5%B0%8F%E7%81%B0%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="shanfeng606">
-<meta property="og:description" content="numpy.linalg.eig总结 问题缘由：帮同学解决一个问题，原本以为很简单，却因为基础不扎实意外的卡主了，看了好多技术博客，都没讲清楚甚至起了误导作用，直到看了官方文档才恍然大悟">
+<meta property="og:description" content="第一章 算法概述 什么是算法  在计算机领域内，算法是一系列程序指令，用于处理特定的运算和逻辑问题。衡量算法优劣的主要标准是时间复杂度和空间复杂度  什么是数据结构  数据结构是数据的组织、管理和储存格式，其使用目的是为了高效地访问和修改数据数据结构包含数组、链表这样的线性数据结构，也包含树、图这样的复杂数据结构。  什么是时间复杂度  时间复杂度是对一个算法运行时间长短的度量，用大O表示，记做T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-22T14:02:15.250Z">
+<meta property="og:updated_time" content="2020-02-07T12:57:15.748Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/05/numpy.linalg.eig/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/07/22《漫画算法-小灰》读书笔记/"/>
 
 
 
 
 
-  <title>numpy.linalg.eig总结 | shanfeng606</title>
+  <title>《漫画算法-小灰》读书笔记 | shanfeng606</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/05/numpy.linalg.eig/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/07/22%E3%80%8A%E6%BC%AB%E7%94%BB%E7%AE%97%E6%B3%95-%E5%B0%8F%E7%81%B0%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SYF">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">numpy.linalg.eig总结</h1>
+          <h1 class="post-title" itemprop="name headline">《漫画算法-小灰》读书笔记</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-05T11:02:00+08:00">
-                2020-01-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-07T20:51:56+08:00">
+                2020-02-07
               </time>
             
 
@@ -295,8 +295,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -332,24 +332,116 @@
       
 
       
-        <h3 id="numpy-linalg-eig总结"><a href="#numpy-linalg-eig总结" class="headerlink" title="numpy.linalg.eig总结"></a>numpy.linalg.eig总结</h3><blockquote>
-<p>问题缘由：帮同学解决一个问题，原本以为很简单，却因为基础不扎实意外的卡主了，看了好多技术博客，都没讲清楚甚至起了误导作用，直到看了官方文档才恍然大悟</p>
+        <h4 id="第一章-算法概述"><a href="#第一章-算法概述" class="headerlink" title="第一章 算法概述"></a>第一章 算法概述</h4><blockquote>
+<p><strong>什么是算法</strong></p>
 </blockquote>
+<p>在计算机领域内，算法是一系列程序指令，用于处理特定的运算和逻辑问题。<br>衡量算法优劣的主要标准是时间复杂度和空间复杂度</p>
+<blockquote>
+<p><strong>什么是数据结构</strong></p>
+</blockquote>
+<p>数据结构是数据的组织、管理和储存格式，其使用目的是为了高效地访问和修改数据<br>数据结构包含数组、链表这样的线性数据结构，也包含树、图这样的复杂数据结构。</p>
+<blockquote>
+<p><strong>什么是时间复杂度</strong></p>
+</blockquote>
+<p>时间复杂度是对一个算法运行时间长短的度量，用大O表示，记做T(n)=O(F(n))。<br>常见的时间复杂度按照从低到高的顺序，包括O(1)、O(n)、O(nlogn)、O(n^2)等。</p>
 <a id="more"></a>
-<p>numpy.linalg.eig<br>这是计算方阵的特征值和特征向量函数</p>
-<h5 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h5><p>一个：（…，M，M）数组<br>将为其计算特征值和右特征向量的矩阵     </p>
-<hr>
-<h5 id="返回值："><a href="#返回值：" class="headerlink" title="返回值："></a>返回值：</h5><p>w ： （…，M）数组———<strong>特征值</strong><br>特征值，每个特征值根据其多重性重复。特征值不一定是有序的。除非虚部为零，否则所得数组将为复杂类型，在这种情况下它将被强制转换为实型。当a为实数时，所得特征值将为实数（0虚部）或出现在共轭对中<br>v：（…，M，M）数组——–<strong>特征向量</strong><br>归一化的（单位“长度”）特征向量，使得<u><strong>列v[:,i]是对应于特征值的特征向量w[i]。</strong></u></p>
-<hr>
 <blockquote>
-<p><strong>代码示例：</strong></p>
+<p><strong>什么是空间复杂度</strong></p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A = np.array([[<span class="number">0.465</span>,<span class="number">0.32</span>,<span class="number">0.233</span>,<span class="number">0.523</span>],[<span class="number">0.32</span>,<span class="number">0.82</span>,<span class="number">0.254</span>,<span class="number">-0.07</span>],[<span class="number">0.233</span>,<span class="number">0.254</span>,<span class="number">0.596</span>,<span class="number">-0.382</span>],[<span class="number">0.523</span>,<span class="number">-0.07</span>,<span class="number">-0.382</span>,<span class="number">0.435</span>]])</span><br><span class="line">print(<span class="string">'打印A：\n&#123;&#125;'</span>.format(A))</span><br><span class="line">a, b = np.linalg.eig(A)</span><br><span class="line">print(<span class="string">'打印特征值a：\n&#123;&#125;'</span>.format(a))</span><br><span class="line">print(<span class="string">'打印特征向量b：\n&#123;&#125;'</span>.format(b))</span><br></pre></td></tr></table></figure>
-
+<p>空间复杂度是对一个算法在运行过程中临时占用储存空间大小的量度，用大O表示，记做S(n)=O(f(n))。<br>常见的空间复杂度按照从低到高的顺序，包括O(1)、O(n)、O(n^2)等。其中递归算法的空间复杂度和递归深度成正比。</p>
+<h4 id="第二章-数据结构基础"><a href="#第二章-数据结构基础" class="headerlink" title="第二章 数据结构基础"></a>第二章 数据结构基础</h4><blockquote>
+<p><strong>什么是数组</strong></p>
+</blockquote>
+<p>数组是由有限个相同类型的变量所组成的有序集合，它的物理储存方式是顺序存储，访问方式是随机访问。利用下标查找数组元素的时间复杂度是O(1)，中间插入、删除数组元素的时间复杂度是O(n)。</p>
 <blockquote>
-<p><strong>result</strong></p>
+<p><strong>什么是链表</strong></p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">打印A：</span><br><span class="line">[[ <span class="number">0.465</span>  <span class="number">0.32</span>   <span class="number">0.233</span>  <span class="number">0.523</span>]</span><br><span class="line"> [ <span class="number">0.32</span>   <span class="number">0.82</span>   <span class="number">0.254</span> <span class="number">-0.07</span> ]</span><br><span class="line"> [ <span class="number">0.233</span>  <span class="number">0.254</span>  <span class="number">0.596</span> <span class="number">-0.382</span>]</span><br><span class="line"> [ <span class="number">0.523</span> <span class="number">-0.07</span>  <span class="number">-0.382</span>  <span class="number">0.435</span>]]</span><br><span class="line">打印特征值a：</span><br><span class="line">[<span class="number">-0.30599494</span>  <span class="number">0.4110969</span>   <span class="number">1.19902613</span>  <span class="number">1.01187191</span>]</span><br><span class="line">打印特征向量b：</span><br><span class="line">[[<span class="number">-0.62164476</span>  <span class="number">0.37101483</span> <span class="number">-0.49092393</span>  <span class="number">0.48466431</span>]</span><br><span class="line"> [ <span class="number">0.12648963</span> <span class="number">-0.67049098</span> <span class="number">-0.72839633</span> <span class="number">-0.06229771</span>]</span><br><span class="line"> [ <span class="number">0.40405689</span>  <span class="number">0.63636272</span> <span class="number">-0.47694938</span> <span class="number">-0.45199537</span>]</span><br><span class="line"> [ <span class="number">0.65901153</span>  <span class="number">0.08850048</span> <span class="number">-0.03085079</span>  <span class="number">0.74627052</span>]]</span><br></pre></td></tr></table></figure>
+<p>链表是一种链式数据结构，由若干节点组成，每个节点包含指向下一节点的指针。链表的物理储存方式是随机储存，访问方式是顺序访问。查找链表节点的时间复杂度是O(n)，中间插入、删除数组元素的时间复杂度是O(1)。</p>
+<blockquote>
+<p><strong>什么是栈</strong></p>
+</blockquote>
+<p>栈是一种线性逻辑结构，可以用数组实现，也可以用链表实现。栈包含入栈和出栈操作，遵循先入后出的原则（FILO）。</p>
+<blockquote>
+<p><strong>什么是队列</strong></p>
+</blockquote>
+<p>队列也是一种线性逻辑结构，可以用数组实现，也可以用链表实现。队列包含入队和出队操作，遵循先入先出的原则（FIFO）。</p>
+<blockquote>
+<p><strong>什么是散列表</strong></p>
+</blockquote>
+<p>散列表也叫哈希表，是储存Key-Value映射的集合。对于某一个Key，散列表可以在接近O(1)的时间内进行读写操作。散列表通过哈希函数实现Key和数组下标的转换，通过开放寻址法和链表法来解决哈希冲突。</p>
+<h4 id="第三章-树"><a href="#第三章-树" class="headerlink" title="第三章 树"></a>第三章 树</h4><blockquote>
+<p><strong>什么是树</strong></p>
+</blockquote>
+<p>树是n个节点的有限集，有且仅有一个特定的称为根的节点。当n&gt;1时，其余节点可分为m个互不相交的有限集，每一个集合本身又是一个树，并称为根的子树。</p>
+<blockquote>
+<p><strong>什么是二叉树</strong></p>
+</blockquote>
+<p>二叉树是树的一种特殊形式，每一个节点最多有两个孩子节点。二叉树包含完全二叉树和满二叉树两种特殊形式。</p>
+<blockquote>
+<p><strong>二叉树的遍历有几种</strong></p>
+</blockquote>
+<p>根据遍历节点之间的关系， 可以分为前序遍历、中序遍历、后序遍历、层序遍历这4种方式；从更宏观的角度划分，可以划分为深度优先遍历和广度优先遍历两大类。</p>
+<blockquote>
+<p><strong>什么是二叉堆</strong></p>
+</blockquote>
+<p>二叉堆是一种特殊的完全二叉树，分为最大堆和最小堆。<br>在最大堆中，任何一个父节点的值，都大于或等于它左、右孩子节点的值。<br>在最小堆中，任何一个父节点的值，都小于或等于它左、右孩子节点的值。</p>
+<blockquote>
+<p><strong>什么是优先队列</strong></p>
+</blockquote>
+<p>优先队列分为最大优先队列和最小优先队列。<br>在最大优先队列中，无论入队顺序如何，当前最大的元素都会优先出队，这是基于最大堆实现的。<br>在最小优先队列中，无论入队顺序如何，当前最小的元素都会优先出队，这是基于最小堆实现的。</p>
+<h4 id="第四章-排序算法"><a href="#第四章-排序算法" class="headerlink" title="第四章 排序算法"></a>第四章 排序算法</h4><table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>平均时间复杂度</th>
+<th>最坏时间复杂度</th>
+<th>空间复杂度</th>
+<th>是否稳定排序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>冒泡排序</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>鸡尾酒排序</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(nlogn)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(logn)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>计数排序</td>
+<td>O(n+m)</td>
+<td>O(n+m)</td>
+<td>O(m)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>桶排序</td>
+<td>O(n)</td>
+<td>O(nlogn)</td>
+<td>O(n)</td>
+<td>稳定</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -367,11 +459,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 读书笔记</a>
           
-            <a href="/tags/numpy/" rel="tag"><i class="fa fa-tag"></i> numpy</a>
-          
-            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"><i class="fa fa-tag"></i> 线性代数</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
       
@@ -384,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/JS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/" rel="next" title="JS实现轮播图">
-                <i class="fa fa-chevron-left"></i> JS实现轮播图
+              <a href="/2020/02/04/21%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" rel="next" title="JavaScript ES语法学习笔记（三）">
+                <i class="fa fa-chevron-left"></i> JavaScript ES语法学习笔记（三）
               </a>
             
           </div>
@@ -393,10 +483,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/09/%E5%AE%A3%E4%BC%A0%E7%BD%91%E9%A1%B5%E9%A1%B9%E7%9B%AE/" rel="prev" title="宣传网页项目">
-                宣传网页项目 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy-linalg-eig总结"><span class="nav-number">1.</span> <span class="nav-text">numpy.linalg.eig总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数："><span class="nav-number">1.0.1.</span> <span class="nav-text">参数：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回值："><span class="nav-number">1.0.2.</span> <span class="nav-text">返回值：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一章-算法概述"><span class="nav-number">1.</span> <span class="nav-text">第一章 算法概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二章-数据结构基础"><span class="nav-number">2.</span> <span class="nav-text">第二章 数据结构基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三章-树"><span class="nav-number">3.</span> <span class="nav-text">第三章 树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四章-排序算法"><span class="nav-number">4.</span> <span class="nav-text">第四章 排序算法</span></a></li></ol></div>
             
 
           </div>
