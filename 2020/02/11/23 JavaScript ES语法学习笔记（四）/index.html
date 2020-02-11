@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,ES语法," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Object Property123456789let x = 1 ; let y = 2 ; let z = 3let obj = &amp;#123;  &amp;apos;x&amp;apos;: x,  y,           &#x2F;&#x2F;ES6之前必须是key-value形式，ES6可以简写  [z + y]: 6,   &#x2F;&#x2F;ES6属性值支持变量表达式  * hello () &amp;#123;  &#x2F;&#x2F;加*变成异步函数    console.">
+<meta name="keywords" content="JavaScript,ES语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript ES语法学习笔记（四）">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;11&#x2F;23%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89&#x2F;index.html">
+<meta property="og:site_name" content="shanfeng606">
+<meta property="og:description" content="Object Property123456789let x = 1 ; let y = 2 ; let z = 3let obj = &amp;#123;  &amp;apos;x&amp;apos;: x,  y,           &#x2F;&#x2F;ES6之前必须是key-value形式，ES6可以简写  [z + y]: 6,   &#x2F;&#x2F;ES6属性值支持变量表达式  * hello () &amp;#123;  &#x2F;&#x2F;加*变成异步函数    console.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-11T15:29:49.958Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/11/23 JavaScript ES语法学习笔记（四）/"/>
+
+
+
+
+
+  <title>JavaScript ES语法学习笔记（四） | shanfeng606</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shanfeng606</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">此路或有蹉跎,君莫忘必有灵犀相佐</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/23%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SYF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shanfeng606">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript ES语法学习笔记（四）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-11T23:27:22+08:00">
+                2020-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES/" itemprop="url" rel="index">
+                    <span itemprop="name">ES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Object-Property"><a href="#Object-Property" class="headerlink" title="Object Property"></a><strong>Object Property</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span> ; <span class="keyword">let</span> y = <span class="number">2</span> ; <span class="keyword">let</span> z = <span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  <span class="string">'x'</span>: x,</span><br><span class="line">  y,           <span class="comment">//ES6之前必须是key-value形式，ES6可以简写</span></span><br><span class="line">  [z + y]: <span class="number">6</span>,   <span class="comment">//ES6属性值支持变量表达式</span></span><br><span class="line">  * hello () &#123;  <span class="comment">//加*变成异步函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello2'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Set数据结构"><a href="#Set数据结构" class="headerlink" title="Set数据结构"></a><strong>Set数据结构</strong></h4><p>ES5只能用数组或Object存储数据，ES6新增set<br>set存储的数据不能重复，会自动过滤重复的数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>()</span><br><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])   <span class="comment">//可遍历的数据都可以用set方法</span></span><br><span class="line">s.add(<span class="string">'hello'</span>)       <span class="comment">//添加数据，set不允许重复，所以重复添加数据是无效的</span></span><br><span class="line">s.add(<span class="string">'goodbye'</span>)</span><br><span class="line">s.add(<span class="string">'hello'</span>).add(<span class="string">'goodbye'</span>).add(<span class="string">'hello'</span>)</span><br><span class="line">s.delete(<span class="string">'hello'</span>)  <span class="comment">// 删除元素</span></span><br><span class="line">s.clear()            <span class="comment">//清空</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(s.has(<span class="string">'hello2'</span>), s.size)   <span class="comment">//has判断是否有数据,size已经存入数据的参数</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>读取set中的数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(s.keys())      <span class="comment">//返回键名</span></span><br><span class="line"><span class="built_in">console</span>.log(s.values())   <span class="comment">//返回键值</span></span><br><span class="line"><span class="built_in">console</span>.log(s.entries())  <span class="comment">//输出键值对</span></span><br><span class="line">s.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;      <span class="comment">//遍历set中每个成员</span></span><br><span class="line">  <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> s) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Map数据结构"><a href="#Map数据结构" class="headerlink" title="Map数据结构"></a><strong>Map数据结构</strong></h4><p>Map类似python中的“字典”数据结构（Object键值对）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])  <span class="comment">//字典的形式，k可以是任意值</span></span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line">map.set(<span class="number">10</span>, <span class="number">2</span>)     <span class="comment">//set既能添加数据也能修改数据</span></span><br><span class="line">map.set(<span class="number">3</span>, <span class="string">'value-4'</span>)</span><br><span class="line">map.set(<span class="number">1</span>, <span class="string">'value-3'</span>)</span><br><span class="line">map.delete(<span class="number">1</span>)     <span class="comment">// 删除指定数据</span></span><br><span class="line">map.clear()         <span class="comment">//清空</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查某个值</span></span><br><span class="line"><span class="built_in">console</span>.log(map.size)     <span class="comment">//统计key-value的总数</span></span><br><span class="line"><span class="built_in">console</span>.log(map.has(<span class="number">2</span>))    <span class="comment">//判断是否有key-value</span></span><br><span class="line"><span class="built_in">console</span>.log(map.get(<span class="number">1</span>))   <span class="comment">//k返回map对象的指定元素</span></span><br><span class="line"><span class="built_in">console</span>.log(map.keys(), map.values(), map.entries())</span><br><span class="line"></span><br><span class="line"><span class="comment">//map遍历方法</span></span><br><span class="line">map.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> &#123;   <span class="comment">//对map对象中的每一个键值对执行一次参数中提供的回调函数</span></span><br><span class="line">  <span class="built_in">console</span>.log(value, key)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [key, value] <span class="keyword">of</span> map) &#123;   <span class="comment">//可以直接遍历每个成员</span></span><br><span class="line">  <span class="built_in">console</span>.log(key, value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Object-assign（拷贝对象）"><a href="#Object-assign（拷贝对象）" class="headerlink" title="Object.assign（拷贝对象）"></a><strong>Object.assign（拷贝对象）</strong></h4><p>浅复制：对于不是引用的数据，做数据替换；对于引用的数据，替换地址<br>assign是浅拷贝，可能会导致数据的丢失</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target=&#123;<span class="attr">a</span>:<span class="number">1</span>,b=<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">const</span> target=&#123;<span class="attr">a</span>:<span class="number">1</span>,b=<span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> returnedTarget=<span class="built_in">Object</span>.assign(target,source)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(target)</span><br><span class="line"><span class="comment">//output:Object&#123;a:1 , b:4 , c:5&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(returnedTarget)</span><br><span class="line"><span class="comment">//output:Object&#123;a:1 , b:4 , c:5&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Regexp-Sticky（y修饰符）"><a href="#Regexp-Sticky（y修饰符）" class="headerlink" title="Regexp Sticky（y修饰符）"></a><strong>Regexp Sticky（y修饰符）</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="string">'aaa_aa_a'</span></span><br><span class="line"><span class="keyword">const</span> r1 = <span class="regexp">/a+/g</span>    <span class="comment">// ^ $</span></span><br><span class="line"><span class="keyword">const</span> r2 = <span class="regexp">/a+/y</span>    <span class="comment">//必须从剩余部分的第一个位置严格匹配   y--sticky粘连</span></span><br><span class="line"><span class="built_in">console</span>.log(r1.exec(s))<span class="comment">// 输出：aaa</span></span><br><span class="line"><span class="built_in">console</span>.log(r2.exec(s)) <span class="comment">//第一次运行匹配aaa  第二次运行匹配aa</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Regexp-Unicode（u修饰符）"><a href="#Regexp-Unicode（u修饰符）" class="headerlink" title="Regexp Unicode（u修饰符）"></a><strong>Regexp Unicode（u修饰符）</strong></h4><p>u能识别大于2个字节的字符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="string">'𠮷'</span></span><br><span class="line"><span class="keyword">let</span> s2 = <span class="string">'\uD842\uDFB7'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/^\uD842/</span>.test(s2))    <span class="comment">//返回true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/^\uD842/u</span>.test(s2))  <span class="comment">//返回false , 结果正确</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/^.$/</span>.test(s))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/^.$/u</span>.test(s))     <span class="comment">//u能识别大于2个字节的字符</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/\u&#123;20BB7&#125;/u</span>.test(s))   <span class="comment">//在正则中使用unicode码点的写法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/\u&#123;61&#125;/u</span>.test(<span class="string">'a'</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/𠮷&#123;2&#125;/u</span>.test(<span class="string">'𠮷𠮷'</span>))    <span class="comment">//量词的写法</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="String（字符串拼接问题）"><a href="#String（字符串拼接问题）" class="headerlink" title="String（字符串拼接问题）"></a><strong>String（字符串拼接问题）</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">20</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">10</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="string">'javascript'</span></span><br><span class="line"><span class="comment">// const str = 'my age is' + (a + b) + 'i love' + c</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">`my age is <span class="subst">$&#123;a + b&#125;</span> i love <span class="subst">$&#123;c&#125;</span>`</span>     ES6写法 $&#123;&#125;中间可加变量</span><br><span class="line"><span class="built_in">console</span>.log(str)</span><br></pre></td></tr></table></figure>
+<p>ES6处理字符串拼接的实例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Price</span> (<span class="params">strings, type</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> s1 = strings[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">const</span> retailPrice = <span class="number">20</span></span><br><span class="line">  <span class="keyword">const</span> wholeSalePrice = <span class="number">16</span></span><br><span class="line">  <span class="keyword">let</span> showTxt</span><br><span class="line">  <span class="keyword">if</span> (type === <span class="string">'retail'</span>) &#123;</span><br><span class="line">    showTxt = <span class="string">'购买单价是：'</span> + retailPrice</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    showTxt = <span class="string">'购买的批发价是：'</span> + wholeSalePrice</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;s1&#125;</span><span class="subst">$&#123;showTxt&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> showTxt = Price<span class="string">`您此次的<span class="subst">$&#123;<span class="string">'retail'</span>&#125;</span>`</span></span><br><span class="line"><span class="built_in">console</span>.log(showTxt)</span><br></pre></td></tr></table></figure>
+<p>ES6能识别换行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="string">`我是第一行</span></span><br><span class="line"><span class="string">                      //ES6能识别换行</span></span><br><span class="line"><span class="string">我是第二行`</span></span><br><span class="line"><span class="built_in">console</span>.log(s1)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-Destructure（解构赋值）"><a href="#Array-Destructure（解构赋值）" class="headerlink" title="Array Destructure（解构赋值）"></a><strong>Array Destructure（解构赋值）</strong></h4><p>在ES6中新增了变量赋值的方式——解构赋值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'hello'</span>, <span class="string">'world'</span>]</span><br><span class="line"><span class="keyword">let</span> [firstName, surName] = arr   <span class="comment">//解构赋值语法</span></span><br><span class="line"><span class="built_in">console</span>.log(firstName, surName)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]     <span class="comment">//解构赋值arr支持所有可遍历的对象</span></span><br><span class="line"><span class="keyword">let</span> [firstName,, thirdName] = arr   <span class="comment">//逗号略过不想要的值</span></span><br><span class="line"><span class="built_in">console</span>.log(firstName, thirdName)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> user = &#123; <span class="attr">name</span>: <span class="string">'s'</span>, <span class="attr">surname</span>: <span class="string">'t'</span> &#125;;</span><br><span class="line">[user.name, user.surname] = [<span class="number">1</span>, <span class="number">2</span>]   <span class="comment">//修改 已声明的属性值</span></span><br><span class="line"><span class="built_in">console</span>.log(user)</span><br><span class="line"></span><br><span class="line"><span class="comment">//循环体的赋值</span></span><br><span class="line"><span class="keyword">let</span> user = &#123; <span class="attr">name</span>: <span class="string">'s'</span>, <span class="attr">surname</span>: <span class="string">'t'</span> &#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [k, v] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(user)) &#123;</span><br><span class="line">  <span class="comment">// 隐式赋值，显示索引</span></span><br><span class="line">  <span class="comment">// arr[1]</span></span><br><span class="line">  <span class="built_in">console</span>.log(k, v)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> [firstName, curName, ...rest] = arr   <span class="comment">//rest放剩余的数据, rest参数放在赋值变量的最后一个位置上</span></span><br><span class="line"><span class="built_in">console</span>.log(firstName, curName, rest)</span><br><span class="line"></span><br><span class="line"><span class="comment">//对象的解构赋值</span></span><br><span class="line"><span class="keyword">let</span> options = &#123;</span><br><span class="line">  title: <span class="string">'menu'</span>,</span><br><span class="line">  <span class="comment">// width: 100,</span></span><br><span class="line">  height: <span class="number">200</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">title</span>: title2, width = <span class="number">130</span>, height &#125; = options   <span class="comment">//简写的接受名一定要与对象中名字一样，换名称写法title: title2</span></span><br><span class="line"><span class="built_in">console</span>.log(title2, width, height)</span><br><span class="line"></span><br><span class="line"><span class="comment">//复杂例子</span></span><br><span class="line"><span class="keyword">let</span> options = &#123;</span><br><span class="line">  size: &#123;</span><br><span class="line">    width: &#123;</span><br><span class="line">      size: &#123;</span><br><span class="line">        width: <span class="number">200</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    height: <span class="number">200</span></span><br><span class="line">  &#125;,</span><br><span class="line">  items: [<span class="string">'Cake'</span>, <span class="string">'Donut'</span>],</span><br><span class="line">  extra: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">size</span>: &#123; <span class="attr">width</span>: width2, height &#125;, <span class="attr">items</span>: [, item2], extra &#125; = options</span><br><span class="line"><span class="built_in">console</span>.log(width2, height, item2, extra)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/ES%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> ES语法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/07/22%E3%80%8A%E6%BC%AB%E7%94%BB%E7%AE%97%E6%B3%95-%E5%B0%8F%E7%81%B0%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="next" title="《漫画算法-小灰》读书笔记">
+                <i class="fa fa-chevron-left"></i> 《漫画算法-小灰》读书笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/a.jpg"
+                alt="SYF" />
+            
+              <p class="site-author-name" itemprop="name">SYF</p>
+              <p class="site-description motion-element" itemprop="description">从入门到入土</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-Property"><span class="nav-number">1.</span> <span class="nav-text">Object Property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set数据结构"><span class="nav-number">2.</span> <span class="nav-text">Set数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Map数据结构"><span class="nav-number">3.</span> <span class="nav-text">Map数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-assign（拷贝对象）"><span class="nav-number">4.</span> <span class="nav-text">Object.assign（拷贝对象）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Regexp-Sticky（y修饰符）"><span class="nav-number">5.</span> <span class="nav-text">Regexp Sticky（y修饰符）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Regexp-Unicode（u修饰符）"><span class="nav-number">6.</span> <span class="nav-text">Regexp Unicode（u修饰符）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String（字符串拼接问题）"><span class="nav-number">7.</span> <span class="nav-text">String（字符串拼接问题）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-Destructure（解构赋值）"><span class="nav-number">8.</span> <span class="nav-text">Array Destructure（解构赋值）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SYF</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":120,"vOffset":0},"mobile":{"show":false}});</script></body>
+</html>
