@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,ES语法," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Callback（异步操作）异步操作不会立马执行，优先同步操作实际中应避免回调地狱 Promise  thenpromise就是为了解决“回调地狱”问题的，他可以优雅地处理异步操作 举个例子：加载1.js，如果没有发生错误；加载2.js，如果没有发生错误；加载3.js，如果没有发生错误——做其他操作 123456789101112131415161718192021function loadScr">
+<meta name="keywords" content="JavaScript,ES语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript ES语法学习笔记（五）">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;24%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89&#x2F;index.html">
+<meta property="og:site_name" content="shanfeng606">
+<meta property="og:description" content="Callback（异步操作）异步操作不会立马执行，优先同步操作实际中应避免回调地狱 Promise  thenpromise就是为了解决“回调地狱”问题的，他可以优雅地处理异步操作 举个例子：加载1.js，如果没有发生错误；加载2.js，如果没有发生错误；加载3.js，如果没有发生错误——做其他操作 123456789101112131415161718192021function loadScr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-19T11:54:22.804Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/19/24 JavaScript ES语法学习笔记（五）/"/>
+
+
+
+
+
+  <title>JavaScript ES语法学习笔记（五） | shanfeng606</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shanfeng606</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">此路或有蹉跎,君莫忘必有灵犀相佐</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/19/24%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SYF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shanfeng606">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript ES语法学习笔记（五）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-19T19:50:16+08:00">
+                2020-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES/" itemprop="url" rel="index">
+                    <span itemprop="name">ES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Callback（异步操作）"><a href="#Callback（异步操作）" class="headerlink" title="Callback（异步操作）"></a><strong>Callback（异步操作）</strong></h4><p>异步操作不会立马执行，优先同步操作<br>实际中应避免回调地狱</p>
+<h4 id="Promise-then"><a href="#Promise-then" class="headerlink" title="Promise  then"></a><strong>Promise  then</strong></h4><p>promise就是为了解决“回调地狱”问题的，他可以优雅地处理异步操作</p>
+<p>举个例子：<br>加载1.js，如果没有发生错误；<br>加载2.js，如果没有发生错误；<br>加载3.js，如果没有发生错误——做其他操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span> (<span class="params">src</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">    script.src = src</span><br><span class="line">    script.onload = <span class="function"><span class="params">()</span> =&gt;</span> resolve(src)<span class="comment">// fulfilled,result    状态不可逆，只有一个执行</span></span><br><span class="line">    script.onerror = <span class="function">(<span class="params">err</span>) =&gt;</span> reject(err)<span class="comment">// rejected,error</span></span><br><span class="line">    <span class="built_in">document</span>.head.append(script)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loadScript(<span class="string">'./1.js'</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> loadScript(<span class="string">'./4.js'</span>)</span><br><span class="line">  &#125;, (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    loadScript(<span class="string">'./3.js'</span>)</span><br><span class="line">  &#125;, (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<blockquote>
+<p>Promise的基本语法</p>
+</blockquote>
+<h4 id="Resolve-amp-Reject-（异步操作）"><a href="#Resolve-amp-Reject-（异步操作）" class="headerlink" title="Resolve &amp; Reject （异步操作）"></a><strong>Resolve &amp; Reject （异步操作）</strong></h4><p>promise提供的两个静态方法，需通过promise调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;...&#125;)</span><br></pre></td></tr></table></figure>
+<p>通过创建Promise对象开启一个异步操作的过程，一般用几部完成多次异步操作：</p>
+<ol>
+<li>new Promise(fn) 返回一个Promise对象</li>
+<li>在fn中指定异步等处理</li>
+<li>处理结果正常的话，调用resolve（处理结果值）</li>
+<li>处理结果错误的话，调用reject（Error对象）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">bool</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (bool) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      resolve(<span class="number">30</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'ss'</span>))   <span class="comment">//非异步转化成异步</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">0</span>).then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;, (err) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Catch（异步操作）"><a href="#Catch（异步操作）" class="headerlink" title="Catch（异步操作）"></a><strong>Catch（异步操作）</strong></h4><p>捕获异步操作过程中出现的任何异常<br>基本语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p.catch(onRejected)</span><br><span class="line"></span><br><span class="line">p.catch(<span class="function"><span class="keyword">function</span>(<span class="params">reason</span>))</span>&#123;</span><br><span class="line">    <span class="comment">//rejection</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span> (<span class="params">src</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// pending,undefined--挂起，未定义</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">    script.src = src</span><br><span class="line">    script.onload = <span class="function"><span class="params">()</span> =&gt;</span> resolve(src)<span class="comment">// fulfilled,result</span></span><br><span class="line">    script.onerror = <span class="function">(<span class="params">err</span>) =&gt;</span> reject(err)<span class="comment">// rejected,error</span></span><br><span class="line">    <span class="built_in">document</span>.head.append(script)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">loadScript(<span class="string">'./1.js'</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> loadScript(<span class="string">'./2.js'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> loadScript(<span class="string">'./4.js'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;      <span class="comment">//捕获then传递链上所有的报错（触发reject时捕获）</span></span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="All（异步操作）"><a href="#All（异步操作）" class="headerlink" title="All（异步操作）"></a><strong>All（异步操作）</strong></h4><p>不分先后，只接受数据<br>promise.all 生成并返回一个新的Promise对象，所以它可以使用Promise实例的所有方法。参数传递promise数组中的所有promise对象都变为resolve的时候，该方法才会返回，新建的promise则会使用这些promise的值。<br>如果参数中任何一个promise为reject的话，则整个promise.all调用会立即终止，并返回一个reject的新的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p1 = <span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">const</span> p2 = <span class="built_in">Promise</span>.resolve(<span class="number">20</span>)</span><br><span class="line"><span class="keyword">const</span> p3 = <span class="built_in">Promise</span>.resolve(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">Promise</span>.all([p1, p2, p3]).then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Race（异步操作）"><a href="#Race（异步操作）" class="headerlink" title="Race（异步操作）"></a><strong>Race（异步操作）</strong></h4><p>先到先得</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p1 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(<span class="number">1</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p2 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(<span class="number">2</span>)</span><br><span class="line">    &#125;, <span class="number">3000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Promise</span>.race([p1(), p2()]).then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Reflect-apply（反射机制）"><a href="#Reflect-apply（反射机制）" class="headerlink" title="Reflect.apply（反射机制）"></a><strong>Reflect.apply（反射机制）</strong></h4><p>Java的反射机制是在编译阶段不知道是哪个类被加载，而是在运行的时候才加载、执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Math.floor这个函数应用到null作用域上，参数为3.72</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor.apply(<span class="literal">null</span>, [<span class="number">3.72</span>]))      <span class="comment">//ES5写法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.apply(<span class="built_in">Math</span>.floor, <span class="literal">null</span>, [<span class="number">4.72</span>]))   <span class="comment">//ES6写法</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Reflect-construct（反射机制）"><a href="#Reflect-construct（反射机制）" class="headerlink" title="Reflect.construct（反射机制）"></a><strong>Reflect.construct（反射机制）</strong></h4><p>用反射机制去动态实例化一个类<br>Reflect.construct( )方法的行为有点像 new 操作符 构造函数，相当于运行new target(…args)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> d = <span class="built_in">Reflect</span>.construct(<span class="built_in">Date</span>, [<span class="number">1776</span>,<span class="number">6</span>,<span class="number">4</span>])</span><br><span class="line">d <span class="keyword">instanceof</span> <span class="built_in">Date</span>  <span class="comment">//true</span></span><br><span class="line">d.getFullYear()  <span class="comment">//1776</span></span><br><span class="line"><span class="string">``</span><span class="string">`’</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### **Reflect.deleteProperty()   Reflect.get()（反射机制）**</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">//reflect读取内容</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">Reflect</span>.deleteProperty(obj, <span class="string">'x'</span>)   <span class="comment">//删除</span></span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.get(obj, <span class="string">'x'</span>))  <span class="comment">//读取</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.get([<span class="number">3</span>, <span class="number">4</span>], <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>reflect与object的区别：返回值不同</p>
+<h4 id="Reflect-getOwnPropertyDescriptor等（反射机制）"><a href="#Reflect-getOwnPropertyDescriptor等（反射机制）" class="headerlink" title="Reflect.getOwnPropertyDescriptor等（反射机制）"></a><strong>Reflect.getOwnPropertyDescriptor等（反射机制）</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125; </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="string">'y'</span>)) <span class="comment">//检查obj下的属性</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.getPrototypeOf(d))  <span class="comment">//快速打印原型对象上的方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.has(obj, <span class="string">'y'</span>))  <span class="comment">//验证对象上有没有属性，该方法Reflect特有</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.freeze(obj)   <span class="comment">//冻结，使不可扩展</span></span><br><span class="line"> obj.z=<span class="number">3</span>  <span class="comment">//不可增加删减</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.isExtensible(obj)) <span class="comment">//检测是否可扩展</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(obj))   <span class="comment">//返回对象的自身属性</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys([<span class="number">1</span>, <span class="number">2</span>]))  <span class="comment">//返回1,2，length(索引加长度)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.preventExtensions(obj)  <span class="comment">//reflect提供的API防止参数扩展</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.set(obj, <span class="string">'z'</span>, <span class="number">4</span>)   <span class="comment">//reflect提供的API添加数据</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'duck'</span>, <span class="string">'duck'</span>, <span class="string">'duck'</span>]</span><br><span class="line"><span class="built_in">Reflect</span>.set(arr, <span class="number">2</span>, <span class="string">'goose'</span>)  <span class="comment">//修改数据</span></span><br><span class="line"><span class="built_in">console</span>.log(arr)</span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.setPrototypeOf(arr, <span class="built_in">String</span>.prototype) <span class="comment">//将数组的原型改成字符串的原型</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="proxy-basic-syntax（该怎样使用代理功能）"><a href="#proxy-basic-syntax（该怎样使用代理功能）" class="headerlink" title="proxy basic syntax（该怎样使用代理功能）"></a><strong>proxy basic syntax（该怎样使用代理功能）</strong></h4><p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p=<span class="keyword">new</span> <span class="built_in">Proxy</span>(target,handler)</span><br></pre></td></tr></table></figure>
+<p>通俗的讲第一个参数target就是用来代理的“对象”，被代理之后他是不能直接被访问的，而handler就是实现代理的过程。</p>
+<p>主要业务做信息的读取</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">  name: <span class="string">'xiaoming'</span>,</span><br><span class="line">  price: <span class="number">190</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Proxy</span>(o, &#123;</span><br><span class="line">  <span class="keyword">get</span> (target, key) &#123;</span><br><span class="line">    <span class="keyword">if</span> (key === <span class="string">'price'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> target[key] + <span class="number">20</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> target[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(d.price, d.name)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Schema-Validation（写操作进行拦截）"><a href="#Schema-Validation（写操作进行拦截）" class="headerlink" title="Schema Validation（写操作进行拦截）"></a><strong>Schema Validation（写操作进行拦截）</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">  name: <span class="string">'xiaoming'</span>,</span><br><span class="line">  price: <span class="number">190</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Proxy</span>(o, &#123;</span><br><span class="line">  <span class="keyword">get</span> (target, key) &#123;</span><br><span class="line">    <span class="keyword">return</span> target[key]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">set</span> (target, key, value) &#123;     <span class="comment">//加个set函数来禁止修改</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">d.price = <span class="number">300</span></span><br><span class="line"><span class="built_in">console</span>.log(d.price, d.name)</span><br></pre></td></tr></table></figure>
+<p>ES5中禁止写入的写法，完全锁死</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [key] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(o)) &#123;</span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(o, key, &#123;</span><br><span class="line">    writable: <span class="literal">false</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">o.pirce = <span class="number">300</span></span><br><span class="line"><span class="built_in">console</span>.log(o.name, o.price)</span><br></pre></td></tr></table></figure>
+
+<p> 更复杂的例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//监听错误</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'error'</span>, (e) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.message)</span><br><span class="line">  <span class="comment">// report('./')</span></span><br><span class="line">&#125;, <span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">  name: <span class="string">'xiaoming'</span>,</span><br><span class="line">  price: <span class="number">190</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 校验规则</span></span><br><span class="line"><span class="keyword">let</span> validator = <span class="function">(<span class="params">target, key, value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Reflect</span>.has(target, key)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (key === <span class="string">'price'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (value &gt; <span class="number">300</span>) &#123;</span><br><span class="line">        <span class="comment">// 不满足规则就要触发错误</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'price exceed 300'</span>)</span><br><span class="line">        <span class="comment">// return false</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        target[key] = value</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      target[key] = value</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Proxy</span>(o, &#123;</span><br><span class="line">  <span class="keyword">get</span> (target, key) &#123;</span><br><span class="line">    <span class="keyword">return</span> target[key] || <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">set</span>: validator          //封装成一个模块</span><br><span class="line">&#125;)</span><br><span class="line">d.price = 301</span><br><span class="line">d.name = 'hanmeimei'</span><br><span class="line">d.age = 400</span><br><span class="line">console.log(d.price, d.name, d.age)</span><br></pre></td></tr></table></figure>
+<p>不同的实例对象每次生成的值唯一，且不能被修改</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;</span><br><span class="line">      id: <span class="built_in">Math</span>.random().toString(<span class="number">36</span>).slice(<span class="number">-8</span>) <span class="comment">//生成随机数，转换成36进制的字符串，截取后8位</span></span><br><span class="line">    &#125;, &#123;&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">get</span> id () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.proxy.id</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> com = <span class="keyword">new</span> Component()</span><br><span class="line"><span class="keyword">let</span> com2 = <span class="keyword">new</span> Component()</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(com.id, com2.id)</span><br><span class="line">&#125;</span><br><span class="line">com.id = <span class="string">'abc'</span></span><br><span class="line"><span class="built_in">console</span>.log(com.id, com2.id)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Revocable-Proxy"><a href="#Revocable-Proxy" class="headerlink" title="Revocable Proxy"></a><strong>Revocable Proxy</strong></h4><p>撤销代理，让代理失效</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">  name: <span class="string">'xiaoming'</span>,</span><br><span class="line">  price: <span class="number">190</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> d = <span class="built_in">Proxy</span>.revocable(o, &#123;</span><br><span class="line">  <span class="keyword">get</span> (target, key) &#123;</span><br><span class="line">    <span class="keyword">if</span> (key === <span class="string">'price'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> target[key] + <span class="number">20</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> target[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(d.proxy.price, d)</span><br><span class="line"><span class="comment">//d包含2部分内容，第一部分为被代理的信息，第二部分为revoke撤销</span></span><br><span class="line"><span class="built_in">console</span>.log(d.proxy.price, d)</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  d.revoke()   <span class="comment">//代理的撤销</span></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(d.proxy.price)</span><br><span class="line">  &#125;, <span class="number">100</span>)</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/ES%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> ES语法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/11/23%20JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="next" title="JavaScript ES语法学习笔记（四）">
+                <i class="fa fa-chevron-left"></i> JavaScript ES语法学习笔记（四）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/a.jpg"
+                alt="SYF" />
+            
+              <p class="site-author-name" itemprop="name">SYF</p>
+              <p class="site-description motion-element" itemprop="description">从入门到入土</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Callback（异步操作）"><span class="nav-number">1.</span> <span class="nav-text">Callback（异步操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-then"><span class="nav-number">2.</span> <span class="nav-text">Promise  then</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Resolve-amp-Reject-（异步操作）"><span class="nav-number">3.</span> <span class="nav-text">Resolve &amp; Reject （异步操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Catch（异步操作）"><span class="nav-number">4.</span> <span class="nav-text">Catch（异步操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#All（异步操作）"><span class="nav-number">5.</span> <span class="nav-text">All（异步操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Race（异步操作）"><span class="nav-number">6.</span> <span class="nav-text">Race（异步操作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reflect-apply（反射机制）"><span class="nav-number">7.</span> <span class="nav-text">Reflect.apply（反射机制）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reflect-construct（反射机制）"><span class="nav-number">8.</span> <span class="nav-text">Reflect.construct（反射机制）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reflect-getOwnPropertyDescriptor等（反射机制）"><span class="nav-number">9.</span> <span class="nav-text">Reflect.getOwnPropertyDescriptor等（反射机制）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proxy-basic-syntax（该怎样使用代理功能）"><span class="nav-number">10.</span> <span class="nav-text">proxy basic syntax（该怎样使用代理功能）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Schema-Validation（写操作进行拦截）"><span class="nav-number">11.</span> <span class="nav-text">Schema Validation（写操作进行拦截）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Revocable-Proxy"><span class="nav-number">12.</span> <span class="nav-text">Revocable Proxy</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SYF</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":120,"vOffset":0},"mobile":{"show":false}});</script></body>
+</html>

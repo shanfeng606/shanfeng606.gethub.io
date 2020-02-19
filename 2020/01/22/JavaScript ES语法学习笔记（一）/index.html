@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="作用域（全局、局部、块、动态） 全局 123456var abc=1234    &#x2F;&#x2F;当全局变量用abcd=2345       &#x2F;&#x2F;不加var声明，则当windows对象的全局属性function test()&amp;#123;    ab=45         &#x2F;&#x2F;这里的ab也是挂在windows对象的全局属性  &amp;#125;">
+<meta name="description" content="作用域（全局、局部、块、动态） 全局 123456var abc=1234    &#x2F;&#x2F;当全局变量用abcd=2345       &#x2F;&#x2F;不加var声明，则当windows对象的全局属性function test()&amp;#123;    ab=45         &#x2F;&#x2F;这里的ab也是挂在windows对象的全局属性  &amp;#125;   局部 123456789围墙外function test()&amp;#12">
 <meta name="keywords" content="JavaScript,ES语法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript ES语法学习笔记（一）">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;22&#x2F;JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
 <meta property="og:site_name" content="shanfeng606">
-<meta property="og:description" content="作用域（全局、局部、块、动态） 全局 123456var abc=1234    &#x2F;&#x2F;当全局变量用abcd=2345       &#x2F;&#x2F;不加var声明，则当windows对象的全局属性function test()&amp;#123;    ab=45         &#x2F;&#x2F;这里的ab也是挂在windows对象的全局属性  &amp;#125;">
+<meta property="og:description" content="作用域（全局、局部、块、动态） 全局 123456var abc=1234    &#x2F;&#x2F;当全局变量用abcd=2345       &#x2F;&#x2F;不加var声明，则当windows对象的全局属性function test()&amp;#123;    ab=45         &#x2F;&#x2F;这里的ab也是挂在windows对象的全局属性  &amp;#125;   局部 123456789围墙外function test()&amp;#12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-22T13:56:39.937Z">
+<meta property="og:updated_time" content="2020-02-11T15:34:36.156Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -335,10 +335,11 @@
         <h4 id="作用域（全局、局部、块、动态）"><a href="#作用域（全局、局部、块、动态）" class="headerlink" title="作用域（全局、局部、块、动态）"></a>作用域（全局、局部、块、动态）</h4><blockquote>
 <h5 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h5></blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> abc=<span class="number">1234</span>    <span class="comment">//当全局变量用</span></span><br><span class="line">abcd=<span class="number">2345</span>       <span class="comment">//不加var声明，则当windows对象的全局属性</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ab=<span class="number">45</span>         <span class="comment">//这里的ab也是挂在windows对象的全局属性  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+
 <blockquote>
 <h5 id="局部"><a href="#局部" class="headerlink" title="局部"></a>局部</h5></blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">围墙外</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;------函数相当于围墙</span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">3</span>      <span class="comment">//a是局部作用域，&#123;&#125;外不能获取到</span></span><br><span class="line">    <span class="keyword">return</span> a+<span class="number">4</span>  <span class="comment">//函数外获取a</span></span><br><span class="line">                    <span class="comment">//第一种方法：通过return向外传递值</span></span><br><span class="line">                    <span class="comment">//第二种方法，通过闭包的方式</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(test())</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
 <p>闭包的实例</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">3</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> b=<span class="number">4</span></span><br><span class="line">        <span class="keyword">return</span> a+b   <span class="comment">//a作用域在test()中共享的,在test2()中也能访问到，层层向上找---作用域链</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -476,7 +477,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
