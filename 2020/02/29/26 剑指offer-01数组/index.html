@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="shanfeng606">
 <meta property="og:description" content="二维数组中的查找 题目描述 【简单】在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  1234567891011121314151617181920function Find(target, array)&amp;#123;    &#x2F;&#x2F; write code h">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-29T13:24:19.217Z">
+<meta property="og:updated_time" content="2020-03-05T07:39:02.406Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -332,7 +332,7 @@
       
 
       
-        <h4 id="二维数组中的查找"><a href="#二维数组中的查找" class="headerlink" title="二维数组中的查找"></a>二维数组中的查找</h4><blockquote>
+        <h3 id="二维数组中的查找"><a href="#二维数组中的查找" class="headerlink" title="二维数组中的查找"></a>二维数组中的查找</h3><blockquote>
 <p>题目描述 【简单】<br>在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Find</span>(<span class="params">target, array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> col=array.length,</span><br><span class="line">       row=array[<span class="number">0</span>].length;</span><br><span class="line">    <span class="comment">//从矩阵左下角找起</span></span><br><span class="line">    <span class="keyword">let</span> c=col<span class="number">-1</span>,</span><br><span class="line">        r= <span class="number">0</span> ;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span>(c&gt;=<span class="number">0</span> &amp;&amp; r&lt;=row<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[c][r]&lt;target)&#123;</span><br><span class="line">            r++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(array[c][r]&gt;target)&#123;</span><br><span class="line">            c--;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -340,13 +340,13 @@
 <a id="more"></a>
 
 <hr>
-<h4 id="数组中重复的数字"><a href="#数组中重复的数字" class="headerlink" title="数组中重复的数字"></a>数组中重复的数字</h4><blockquote>
+<h3 id="数组中重复的数字"><a href="#数组中重复的数字" class="headerlink" title="数组中重复的数字"></a>数组中重复的数字</h3><blockquote>
 <p>题目描述【简单】<br>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">duplicate</span>(<span class="params">numbers, duplication</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">//这里要特别注意~找到任意重复的一个值并赋值到duplication[0]</span></span><br><span class="line">    <span class="comment">//函数返回True/False</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>;j&lt;numbers.length;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(numbers[i]===numbers[j])&#123;</span><br><span class="line">                duplication[<span class="number">0</span>]=numbers[i];</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>总结：遍历数组，比较无脑</p>
 <hr>
-<h4 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h4><blockquote>
+<h3 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h3><blockquote>
 <p>题目描述<br>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0] *A[1]*…*A[i-1]*A[i+1]*…*A[n-1]。不能使用除法。（注意：规定B[0] = A[1] * A[2] * … * A[n-1]，B[n-1] = A[0] * A[1] * … * A[n-2];）</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> n=array.length,</span><br><span class="line">        B=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        B[i]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=i+<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">            B[i]=B[i]*array[j];</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> k=i<span class="number">-1</span>;k&gt;=<span class="number">0</span>;k--)&#123;</span><br><span class="line">            B[i]=B[i]*array[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -476,7 +476,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -531,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#二维数组中的查找"><span class="nav-number">1.</span> <span class="nav-text">二维数组中的查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组中重复的数字"><span class="nav-number">2.</span> <span class="nav-text">数组中重复的数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建乘积数组"><span class="nav-number">3.</span> <span class="nav-text">构建乘积数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组中的查找"><span class="nav-number">1.</span> <span class="nav-text">二维数组中的查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组中重复的数字"><span class="nav-number">2.</span> <span class="nav-text">数组中重复的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建乘积数组"><span class="nav-number">3.</span> <span class="nav-text">构建乘积数组</span></a></li></ol></div>
             
 
           </div>
