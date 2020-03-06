@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,ES语法," />
+  <meta name="keywords" content="算法,《剑指Offer》," />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="作用域（全局、局部、块、动态） 全局 123456var abc=1234    &#x2F;&#x2F;当全局变量用abcd=2345       &#x2F;&#x2F;不加var声明，则当windows对象的全局属性function test()&amp;#123;    ab=45         &#x2F;&#x2F;这里的ab也是挂在windows对象的全局属性  &amp;#125;   局部 123456789围墙外function test()&amp;#12">
-<meta name="keywords" content="JavaScript,ES语法">
+<meta name="description" content="旋转数组的最小数字 题目描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。  方法一：顺序遍历123456789101112function minNumberInRotat">
+<meta name="keywords" content="算法,《剑指Offer》">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript ES语法学习笔记（一）">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;22&#x2F;JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
+<meta property="og:title" content="《剑指Offer》-06查找与排序">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;06&#x2F;32%20%E5%89%91%E6%8C%87offer-06%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F&#x2F;index.html">
 <meta property="og:site_name" content="shanfeng606">
-<meta property="og:description" content="作用域（全局、局部、块、动态） 全局 123456var abc=1234    &#x2F;&#x2F;当全局变量用abcd=2345       &#x2F;&#x2F;不加var声明，则当windows对象的全局属性function test()&amp;#123;    ab=45         &#x2F;&#x2F;这里的ab也是挂在windows对象的全局属性  &amp;#125;   局部 123456789围墙外function test()&amp;#12">
+<meta property="og:description" content="旋转数组的最小数字 题目描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。  方法一：顺序遍历123456789101112function minNumberInRotat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-11T15:34:36.156Z">
+<meta property="og:updated_time" content="2020-03-06T13:08:44.575Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/22/JavaScript ES语法学习笔记（一）/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/06/32 剑指offer-06查找与排序/"/>
 
 
 
 
 
-  <title>JavaScript ES语法学习笔记（一） | shanfeng606</title>
+  <title>《剑指Offer》-06查找与排序 | shanfeng606</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/22/JavaScript%20ES%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/32%20%E5%89%91%E6%8C%87offer-06%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SYF">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript ES语法学习笔记（一）</h1>
+          <h1 class="post-title" itemprop="name headline">《剑指Offer》-06查找与排序</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-22T21:51:47+08:00">
-                2020-01-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T21:06:03+08:00">
+                2020-03-06
               </time>
             
 
@@ -295,8 +295,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES/" itemprop="url" rel="index">
-                    <span itemprop="name">ES</span>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -332,27 +332,16 @@
       
 
       
-        <h4 id="作用域（全局、局部、块、动态）"><a href="#作用域（全局、局部、块、动态）" class="headerlink" title="作用域（全局、局部、块、动态）"></a>作用域（全局、局部、块、动态）</h4><blockquote>
-<h5 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h5></blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> abc=<span class="number">1234</span>    <span class="comment">//当全局变量用</span></span><br><span class="line">abcd=<span class="number">2345</span>       <span class="comment">//不加var声明，则当windows对象的全局属性</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ab=<span class="number">45</span>         <span class="comment">//这里的ab也是挂在windows对象的全局属性  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h5 id="局部"><a href="#局部" class="headerlink" title="局部"></a>局部</h5></blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">围墙外</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;------函数相当于围墙</span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">3</span>      <span class="comment">//a是局部作用域，&#123;&#125;外不能获取到</span></span><br><span class="line">    <span class="keyword">return</span> a+<span class="number">4</span>  <span class="comment">//函数外获取a</span></span><br><span class="line">                    <span class="comment">//第一种方法：通过return向外传递值</span></span><br><span class="line">                    <span class="comment">//第二种方法，通过闭包的方式</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(test())</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
+        <h3 id="旋转数组的最小数字"><a href="#旋转数组的最小数字" class="headerlink" title="旋转数组的最小数字"></a>旋转数组的最小数字</h3><blockquote>
+<p>题目描述<br>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。<br>输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。<br>例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。<br>NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
+</blockquote>
+<h4 id="方法一：顺序遍历"><a href="#方法一：顺序遍历" class="headerlink" title="方法一：顺序遍历"></a>方法一：顺序遍历</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minNumberInRotateArray</span>(<span class="params">rotateArray</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(rotateArray.length===<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;rotateArray.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(rotateArray[i]&gt;rotateArray[i+<span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">return</span> rotateArray[i+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
+<h4 id="方法二：Sort排序"><a href="#方法二：Sort排序" class="headerlink" title="方法二：Sort排序"></a>方法二：<code>Sort</code>排序</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minNumberInRotateArray</span>(<span class="params">rotateArray</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(rotateArray.length===<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    rotateArray.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a-b;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> rotateArray[<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法三：二分法查找"><a href="#方法三：二分法查找" class="headerlink" title="方法三：二分法查找"></a>方法三：二分法查找</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minNumberInRotateArray</span>(<span class="params">rotateArray</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(rotateArray.length===<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> low=<span class="number">0</span>,</span><br><span class="line">        high=rotateArray.length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(low&lt;high)&#123;</span><br><span class="line">        <span class="keyword">var</span> mid=low+<span class="built_in">Math</span>.floor((high-low)/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>(rotateArray[mid]&gt;rotateArray[high])&#123;</span><br><span class="line">            low=mid+<span class="number">1</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            high=mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> rotateArray[low];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>闭包的实例</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">3</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> b=<span class="number">4</span></span><br><span class="line">        <span class="keyword">return</span> a+b   <span class="comment">//a作用域在test()中共享的,在test2()中也能访问到，层层向上找---作用域链</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<h5 id="块级"><a href="#块级" class="headerlink" title="块级"></a>块级</h5></blockquote>
-<p>ES6新增块级作用域—–<code>let</code><br>现在{}内的变量外部无法访问，ES6之前是层层向上查找</p>
-<blockquote>
-<h5 id="动态作用域"><a href="#动态作用域" class="headerlink" title="动态作用域"></a>动态作用域</h5></blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.a=<span class="number">3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)----<span class="keyword">this</span>的作用域是动态的</span><br><span class="line">&#125;</span><br><span class="line">test()                    <span class="comment">//   输出3</span></span><br><span class="line">test.bind(&#123;<span class="attr">a</span>:<span class="number">100</span>&#125;)()   <span class="comment">//bind让函数动态绑定一个对象</span></span><br><span class="line">                       <span class="comment">//输出100</span></span><br></pre></td></tr></table></figure>
-<p>let 与 var 区别</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> c=<span class="number">4</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.b,<span class="built_in">window</span>.c)  <span class="comment">//第一个能输出，第二个不能输出</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b=<span class="number">4</span></span><br><span class="line"><span class="built_in">console</span>.log(b)  <span class="comment">//不影响输出修改</span></span><br><span class="line"><span class="keyword">let</span> c=<span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(c)  <span class="comment">//报错，不能重复定义</span></span><br></pre></td></tr></table></figure>
-<p>const：let有的特性他都有，除此之外只能定义常量<br>const不能先声明，在赋值</p>
-<h5 id="知识点总结：作用域范围-重复定义-初始化-变量提升"><a href="#知识点总结：作用域范围-重复定义-初始化-变量提升" class="headerlink" title="知识点总结：作用域范围 重复定义 初始化 变量提升"></a><u>知识点总结：作用域范围 重复定义 初始化 变量提升</u></h5>
+<p><strong>总结：</strong><br><code>arr.sort(function(a,b){return a-b})</code> 升序<br><code>arr.sort(function(a,b){return b-a})</code> 降序<br>旋转之后的数组实际上可以划分为两个排序的子数组，而且前面的子数组的元素都大于或者等于后面的子数组的元素。最小的元素刚好是这两个子数组的分界线。在排序的数组中可以用二分查找实现O（logn）的查找。<br>旋转数组可分为两段渐变数列，通过mid与数组第一个和最后一个数进行比较，判断mid在哪个渐变序列中，再缩小搜索范围low和high，直到找到最小值。</p>
+
       
     </div>
     
@@ -369,9 +358,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/ES%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> ES语法</a>
+            <a href="/tags/%E3%80%8A%E5%89%91%E6%8C%87Offer%E3%80%8B/" rel="tag"><i class="fa fa-tag"></i> 《剑指Offer》</a>
           
         </div>
       
@@ -384,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/11/JS%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/" rel="next" title="JS表单验证">
-                <i class="fa fa-chevron-left"></i> JS表单验证
+              <a href="/2020/03/05/31%20%E5%89%91%E6%8C%87offer-05%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/" rel="next" title="《剑指Offer》-05栈与队列">
+                <i class="fa fa-chevron-left"></i> 《剑指Offer》-05栈与队列
               </a>
             
           </div>
@@ -393,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/24/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" rel="prev" title="2019年终总结">
-                2019年终总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域（全局、局部、块、动态）"><span class="nav-number">1.</span> <span class="nav-text">作用域（全局、局部、块、动态）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局"><span class="nav-number">1.1.</span> <span class="nav-text">全局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#局部"><span class="nav-number">1.2.</span> <span class="nav-text">局部</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#块级"><span class="nav-number">1.3.</span> <span class="nav-text">块级</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态作用域"><span class="nav-number">1.4.</span> <span class="nav-text">动态作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#知识点总结：作用域范围-重复定义-初始化-变量提升"><span class="nav-number">1.5.</span> <span class="nav-text">知识点总结：作用域范围 重复定义 初始化 变量提升</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转数组的最小数字"><span class="nav-number">1.</span> <span class="nav-text">旋转数组的最小数字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一：顺序遍历"><span class="nav-number">1.1.</span> <span class="nav-text">方法一：顺序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：Sort排序"><span class="nav-number">1.2.</span> <span class="nav-text">方法二：Sort排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三：二分法查找"><span class="nav-number">1.3.</span> <span class="nav-text">方法三：二分法查找</span></a></li></ol></li></ol></div>
             
 
           </div>
