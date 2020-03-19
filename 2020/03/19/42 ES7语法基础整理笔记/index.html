@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="JavaScript,ES语法,ES7," />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="随笔">
+<meta name="description" content="乘方简写,与python同用**表示1234&#x2F;&#x2F;ES6乘方写法:Math.pow() Math.pow(2,5)   &#x2F;&#x2F;ES7中的数学乘方:** console.log(2 ** 5) Array.prototype.includes功能：判断数组中是否存在指定元素，如果包含则返回true，否则返回false。 12const arr = [1, 2, 3, 4, 5, 6, 7]console">
+<meta name="keywords" content="JavaScript,ES语法,ES7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;04&#x2F;hello-world&#x2F;index.html">
+<meta property="og:title" content="ES7语法基础整理笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;19&#x2F;42%20ES7%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="shanfeng606">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="乘方简写,与python同用**表示1234&#x2F;&#x2F;ES6乘方写法:Math.pow() Math.pow(2,5)   &#x2F;&#x2F;ES7中的数学乘方:** console.log(2 ** 5) Array.prototype.includes功能：判断数组中是否存在指定元素，如果包含则返回true，否则返回false。 12const arr = [1, 2, 3, 4, 5, 6, 7]console">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-06T12:00:03.584Z">
+<meta property="og:updated_time" content="2020-03-19T15:34:09.066Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/04/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/19/42 ES7语法基础整理笔记/"/>
 
 
 
 
 
-  <title>Hello World | shanfeng606</title>
+  <title>ES7语法基础整理笔记 | shanfeng606</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/04/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/19/42%20ES7%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SYF">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">ES7语法基础整理笔记</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-04T11:27:43+08:00">
-                2019-11-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-19T18:33:52+08:00">
+                2020-03-19
               </time>
             
 
@@ -282,6 +282,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES/" itemprop="url" rel="index">
+                    <span itemprop="name">ES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -310,20 +332,10 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h4 id="乘方简写-与python同用-表示"><a href="#乘方简写-与python同用-表示" class="headerlink" title="乘方简写,与python同用**表示"></a>乘方简写,与python同用<code>**</code>表示</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6乘方写法:Math.pow() </span></span><br><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">5</span>)   </span><br><span class="line"><span class="comment">//ES7中的数学乘方:** </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span> ** <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes"></a>Array.prototype.includes</h4><p>功能：判断数组中是否存在指定元素，如果包含则返回true，否则返回false。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="number">40</span>)) <span class="comment">//返回true or false</span></span><br></pre></td></tr></table></figure>
+<h6 id="ps-这几天买了个阿里云学生服务器，研究下怎么玩云服务器，博客就少写点了，不过应该还会坚持日更的，给疫情在家的自己一个小小的目标"><a href="#ps-这几天买了个阿里云学生服务器，研究下怎么玩云服务器，博客就少写点了，不过应该还会坚持日更的，给疫情在家的自己一个小小的目标" class="headerlink" title="ps:这几天买了个阿里云学生服务器，研究下怎么玩云服务器，博客就少写点了，不过应该还会坚持日更的，给疫情在家的自己一个小小的目标"></a>ps:这几天买了个阿里云学生服务器，研究下怎么玩云服务器，博客就少写点了，不过应该还会坚持日更的，给疫情在家的自己一个小小的目标</h6>
       
     </div>
     
@@ -340,7 +352,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"><i class="fa fa-tag"></i> 随笔</a>
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/ES%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> ES语法</a>
+          
+            <a href="/tags/ES7/" rel="tag"><i class="fa fa-tag"></i> ES7</a>
           
         </div>
       
@@ -353,15 +369,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/03/17/41%20Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE+%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E5%AE%9E%E4%BE%8B%E4%B8%8E%E6%94%B9%E8%BF%9B/" rel="next" title="Anaconda环境配置+梯度下降法实例与改进">
+                <i class="fa fa-chevron-left"></i> Anaconda环境配置+梯度下降法实例与改进
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/06/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev" title="我的第一篇博客">
-                我的第一篇博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -497,7 +513,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#乘方简写-与python同用-表示"><span class="nav-number">1.</span> <span class="nav-text">乘方简写,与python同用**表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-prototype-includes"><span class="nav-number">2.</span> <span class="nav-text">Array.prototype.includes</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#ps-这几天买了个阿里云学生服务器，研究下怎么玩云服务器，博客就少写点了，不过应该还会坚持日更的，给疫情在家的自己一个小小的目标"><span class="nav-number">2.0.1.</span> <span class="nav-text">ps:这几天买了个阿里云学生服务器，研究下怎么玩云服务器，博客就少写点了，不过应该还会坚持日更的，给疫情在家的自己一个小小的目标</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
