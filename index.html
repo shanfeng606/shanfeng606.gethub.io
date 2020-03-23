@@ -242,6 +242,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/43%20ES8%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SYF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shanfeng606">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/43%20ES8%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/" itemprop="url">ES8语法基础整理笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:51:14+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES/" itemprop="url" rel="index">
+                    <span itemprop="name">ES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="Async-Await（其实是promise的语法糖）"><a href="#Async-Await（其实是promise的语法糖）" class="headerlink" title="Async Await（其实是promise的语法糖）"></a><strong>Async Await（其实是promise的语法糖）</strong></h4><p>ES8中有没有比Promise更优雅的异步操作呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">firstAsync</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">27</span>   <span class="comment">//async 会自动把返回值变成promise实例</span></span><br><span class="line">                <span class="comment">//等价于 return Promise.resolve (27)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">firstAsync().then(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(val)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>await</code>后跟<code>promise</code>对象，返回结果，如果不是，会自动转换<br>必须配合<code>async</code>使用</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/23/43%20ES8%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/19/42%20ES7%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1574,160 +1722,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/33%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%AF%E5%88%86%E7%B1%BB%E5%8F%AF%E6%90%9C%E7%B4%A2%E7%9A%84%E4%B8%8B%E6%8B%89%E6%A1%86%E7%BB%84%E4%BB%B6%20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SYF">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/a.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shanfeng606">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/07/33%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%AF%E5%88%86%E7%B1%BB%E5%8F%AF%E6%90%9C%E7%B4%A2%E7%9A%84%E4%B8%8B%E6%8B%89%E6%A1%86%E7%BB%84%E4%BB%B6%20/" itemprop="url">自定义可分类可搜索的下拉框组件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T23:44:15+08:00">
-                2020-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BB%A3%E7%A0%81%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index">
-                    <span itemprop="name">代码练习</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BB%A3%E7%A0%81%E7%BB%83%E4%B9%A0/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" itemprop="url" rel="index">
-                    <span itemprop="name">项目实战</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="组件展示"><a href="#组件展示" class="headerlink" title="组件展示"></a>组件展示</h2><p>源码链接:(<a href="https://github.com/shanfeng606/practice_04" target="_blank" rel="noopener">https://github.com/shanfeng606/practice_04</a>)  <a href="https://github.com/shanfeng606/practice_04" target="_blank" rel="noopener">点击跳转</a></p>
-<p>预览链接:(<a href="https://shanfeng606.github.io/practice_04/" target="_blank" rel="noopener">https://shanfeng606.github.io/practice_04/</a>)  <a href="https://shanfeng606.github.io/practice_04/" target="_blank" rel="noopener">点击跳转</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1782,7 +1776,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1804,7 +1798,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
